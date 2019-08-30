@@ -27,17 +27,6 @@ function testPython(req, res) {
        if (err) res.send(err);
        res.send(data.toString())
     });
-    // var pyshell = new PythonShell("test.py");
-    // pyshell.on('message', function (message){
-    //    res.send(message.toString());
-    // });
-    // pyshell.end(function(err){
-    //     if (err){
-    //         throw err;
-    //     };
-    //     console.log("Finished");
-    // })
-
 }
 
 
