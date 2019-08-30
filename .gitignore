@@ -1,6 +1,7 @@
 
 # Created by https://www.gitignore.io/api/node,java,python,haskell,pycharm,webstorm,jetbrains,pycharm+all,webstorm+all
 # Edit at https://www.gitignore.io/?templates=node,java,python,haskell,pycharm,webstorm,jetbrains,pycharm+all,webstorm+all
+.idea/
 
 ### Haskell ###
 dist
