@@ -5,9 +5,6 @@ const PORT = process.env.PORT || 5000;  // Use the env port if available
 const express = require('express');
 const app = express();
 
-const testFolder = './';
-const fs = require('fs');
-
 app.get('/', (req, res) => {
    res.sendFile(path.join(__dirname + '/skalen.html'));
 });
@@ -25,11 +22,22 @@ function testPython(req, res) {
             req.query.length // length of name
         ]
     };
-    PythonShell.run(path.join(__dirname + '/test.py'), options, function(err,data)
-    {
-       if (err) res.send(err);
-       res.send(data.toString())
+    // PythonShell.run(path.join(__dirname + '/test.py'), options, function(err,data)
+    // {
+    //    if (err) res.send(err);
+    //    res.send(data.toString())
+    // });
+    var pyshell = new PythonShell("test.py");
+    pyshell.on('message', function (message){
+       res.send(message.toString());
     });
+    pyshell.end(function(err){
+        if (err){
+            throw err;
+        };
+        console.log("Finished");
+    })
+
 }
 
 
