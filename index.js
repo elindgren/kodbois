@@ -22,21 +22,21 @@ function testPython(req, res) {
             req.query.length // length of name
         ]
     };
-    // PythonShell.run(path.join(__dirname + '/test.py'), options, function(err,data)
-    // {
-    //    if (err) res.send(err);
-    //    res.send(data.toString())
-    // });
-    var pyshell = new PythonShell("test.py");
-    pyshell.on('message', function (message){
-       res.send(message.toString());
+    PythonShell.run(path.join(__dirname + '/test.py'), options, function(err,data)
+    {
+       if (err) res.send(err);
+       res.send(data.toString())
     });
-    pyshell.end(function(err){
-        if (err){
-            throw err;
-        };
-        console.log("Finished");
-    })
+    // var pyshell = new PythonShell("test.py");
+    // pyshell.on('message', function (message){
+    //    res.send(message.toString());
+    // });
+    // pyshell.end(function(err){
+    //     if (err){
+    //         throw err;
+    //     };
+    //     console.log("Finished");
+    // })
 
 }
 
