@@ -30,7 +30,7 @@ def main(argv):
     try:
         # num = int(input("Enter number of desired names: "))
         num = int(argv[1])
-        print_names(num)
+        print_names(num.encode(utf-8))
     except:
         print_names(1)
 

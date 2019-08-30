@@ -2,7 +2,9 @@
   "version": 2,
   "builds": [
     { "src": "index.js", "use": "@now/node-server" },
-    {"src": "test.py", "use": "@now/python"}],
+    {"src": "slumpnamn.py", "use": "@now/python"},
+    {"src": "readlist.py", "use": "@now/python"},
+    {"src": "roligarod.txt", "use": "@now/static"}],
   "routes": [
     {
       "src": "/users",
