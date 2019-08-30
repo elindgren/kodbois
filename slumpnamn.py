@@ -1,4 +1,3 @@
-import numpy as np
 import random
 from sys import argv
 
@@ -13,7 +12,7 @@ def main(argv):
     def print_names(n):
         for i in range(n):
             new_name = ""
-            nr_word = 2 + int(np.random.uniform(-2, 2))
+            nr_word = random.randint(1,3)
             for j in range(nr_word):
                 new_name += random.choice(word)
                 if not j == nr_word - 1:
