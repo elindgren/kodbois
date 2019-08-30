@@ -9,7 +9,7 @@ const testFolder = './';
 const fs = require('fs');
 
 app.get('/', (req, res) => {
-   res.sendFile(path.join(__dirname + '/index.html'));
+   res.sendFile(path.join(__dirname + '/skalen.html'));
 });
 
 //If request for Python code is sent
