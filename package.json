@@ -18,6 +18,7 @@
   "homepage": "https://github.com/elindgren/kodbois#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "python-shell": "^1.0.8"
+    "python-shell": "^1.0.8",
+    "utf8": "^3.0.0"
   }
 }

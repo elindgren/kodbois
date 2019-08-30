@@ -4,6 +4,7 @@ let {PythonShell} = require('python-shell');
 const PORT = process.env.PORT || 5000;  // Use the env port if available
 const express = require('express');
 const app = express();
+const utf8 = require('utf8');
 
 app.get('/', (req, res) => {
    res.sendFile(path.join(__dirname + '/skalen.html'));
@@ -23,10 +24,11 @@ function testPython(req, res) {
         ]
     };
     console.log(options);
-    PythonShell.run(path.join(__dirname + '/test.py'), options, function(err,data)
+    PythonShell.run(path.join(__dirname + '/slumpnamn.py'), options, function(err,data)
     {
        if (err) res.send(err);
-       res.send(data.toString())
+       console.log(data)
+       res.send(utf8.encode(data.toString()))
     });
 }
 
