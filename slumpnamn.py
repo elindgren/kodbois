@@ -1,21 +1,27 @@
-import numpy as np
+# -*- coding: utf-8 -*-
+
 import random
 from sys import argv
+import readlist
 
 
 def main(argv):
-    word = ["drak", "Mannen", "Öhl", "pojken", "pleb", "tnoy", "helvete", "förgöraren", "kuk",
+    word = {"drak", "Mannen", "Öhl", "pojken", "pleb", "tnoy", "helvete", "förgöraren", "kuk",
             "röv", "fan", "dödlig", "kränkt", "döden", "f5xrk", "Quantum", "Dataterminal",
             "Jesus", "senpai", "MILF", "smuts", "fitt", "penis", "gamer", "girl", "boy", "röven",
-            "Satan", "Baldur", "Kawaii"]
+            "Satan", "Baldur", "Kawaii"}
+    
+    word = word | readlist.read_files()
+
     separator = ["", " ", "/", "\\", "-", "_", "&", "@"]
 
     def print_names(n):
         for i in range(n):
             new_name = ""
-            nr_word = 2 + int(np.random.uniform(-2, 2))
+            nr_word = random.randint(1, 3)
             for j in range(nr_word):
-                new_name += random.choice(word)
+                #new_name += random.choice(word)
+                new_name += random.sample(word, 1)[0]
                 if not j == nr_word - 1:
                     new_name += random.choice(separator)
             print(new_name)
