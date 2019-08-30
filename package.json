@@ -1,0 +1,19 @@
+{
+  "name": "kodbois",
+  "version": "1.0.0",
+  "description": "this is a skålen namn generator ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/elindgren/kodbois.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/elindgren/kodbois/issues"
+  },
+  "homepage": "https://github.com/elindgren/kodbois#readme"
+}
