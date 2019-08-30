@@ -11,7 +11,8 @@
 <body>
 <script>
   function generateBowlName(){
-      fetch('/test').then(function(response) {
+      let nbrName = document.getElementById("nbrName").value
+      fetch('/test?length=' + nbrName).then(function(response) {
           // The response is a Response instance.
           // You parse the data into a useable format using `.json()`
           return response.text();
@@ -19,7 +20,7 @@
           // `data` is the parsed version of the JSON returned from the above endpoint.
           console.log(data);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
           document.getElementById("nameBox").innerHTML = data;
-          console.log(window.location.pathname);
+          console.log("Atal namn:" + nbrName);
       });
   }
 </script>
@@ -42,10 +43,20 @@
           </div>
         </div>
         <div class="mdl-cell mdl-cell--12-col" style="text-align: center">
+          <!-- Numeric Textfield with Floating Label -->
+          <form action="#">
+            <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" style="margin:auto; max-width: 200px">
+              <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="nbrName" style="margin:auto">
+              <label class="mdl-textfield__label" for="nbrName">Antal namn</label>
+              <span class="mdl-textfield__error">Input is not a number!</span>
+            </div>
+          </form>
           <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" onclick="generateBowlName()">
             Nytt skål namn
           </button>
         </div>
+
+
       </div>
     </div>
 

@@ -22,6 +22,7 @@ function testPython(req, res) {
             req.query.length // length of name
         ]
     };
+    console.log(options);
     PythonShell.run(path.join(__dirname + '/test.py'), options, function(err,data)
     {
        if (err) res.send(err);
