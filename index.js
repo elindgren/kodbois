@@ -23,10 +23,19 @@ function testPython(req, res) {
         ]
     };
 
-    PythonShell.run('./test.py', options, function(err,data)
+    PythonShell.run(path.join(__dirname + 'test.py'), options, function(err,data)
     {
        if (err) res.send(err);
        res.send(data.toString())
     });
 }
+
+function runScript(){
+    return spawn('python', [
+        options,
+        path.join(__dirname, 'script.py'),
+        "--foo", "some value for foo",
+    ]);
+}
+
 
