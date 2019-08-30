@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/elindgren/kodbois/issues"
   },
-  "homepage": "https://github.com/elindgren/kodbois#readme"
+  "homepage": "https://github.com/elindgren/kodbois#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
