@@ -2,7 +2,6 @@
 
 import random
 from sys import argv
-import readlist
 import json
 
 
@@ -11,8 +10,9 @@ def main(argv):
             "röv", "fan", "dödlig", "kränkt", "döden", "f5xrk", "Quantum", "Dataterminal",
             "Jesus", "senpai", "MILF", "smuts", "fitt", "penis", "gamer", "girl", "boy", "röven",
             "Satan", "Baldur", "Kawaii"}
-    
-    word = word | readlist.read_files()
+    with open('roligaord.json') as json_file:
+        data = json.load(json_file).keys()
+    word = word | data
 
     separator = ["", " ", "/", "\\", "-", "_", "&", "@"]
 

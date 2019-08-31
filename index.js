@@ -31,12 +31,6 @@ function testPython(req, res) {
        console.log(JSON.parse(data));
        res.send(JSON.parse(data))
     });
-    // let pyshell = new PythonShell(path.join(__dirname + '/test.py'), "binary");
-    // pyshell.on('message', function (message) {
-    //     // received a message sent from the Python script (a simple "print" statement)
-    //     console.log(message);
-    // });
-
 }
 
 

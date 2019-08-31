@@ -1,10 +1,10 @@
 {
   "version": 2,
   "builds": [
-    { "src": "index.js", "use": "@now/node-server" },
+    { "src": "index.js", "use": "@now/node-server"},
     {"src": "slumpnamn.py", "use": "@now/python"},
-    {"src": "readlist.py", "use": "@now/python"},
-    {"src": "roligarod.txt", "use": "@now/static"}],
+    {"src": "test.py", "use": "@now/python"},
+    {"src":  "roligaord.json", "use":  "@now/static"}],
   "routes": [
     {
       "src": "/users",
