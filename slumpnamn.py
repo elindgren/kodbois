@@ -3,6 +3,7 @@
 import random
 from sys import argv
 import readlist
+import json
 
 
 def main(argv):
@@ -16,6 +17,7 @@ def main(argv):
     separator = ["", " ", "/", "\\", "-", "_", "&", "@"]
 
     def print_names(n):
+        output_json = {}
         for i in range(n):
             new_name = ""
             nr_word = random.randint(1, 3)
@@ -24,13 +26,14 @@ def main(argv):
                 new_name += random.sample(word, 1)[0]
                 if not j == nr_word - 1:
                     new_name += random.choice(separator)
-            print(new_name)
+            output_json[i] = new_name
+        print(json.dumps(output_json))
 
 
     try:
         # num = int(input("Enter number of desired names: "))
         num = int(argv[1])
-        print_names(num.encode(utf-8))
+        print_names(num)
     except:
         print_names(1)
 

@@ -19,10 +19,15 @@
           return response.text();
       }).then(function(data) {
           // `data` is the parsed version of the JSON returned from the above endpoint.
-          console.log(data);  // { "userId": 1, "id": 1, "title": "...", "body": "..." }
-          let replace_data = data.replace(/,/g, "<br>");
-          document.getElementById("nameBox").innerHTML = replace_data;
-          console.log("Antal namn:" + nbrName);
+          let tmp = JSON.parse(data);
+          let names = (Object.values(tmp));
+          // Build inner html
+          let disp_string = "";
+          for(const name of names) {
+            console.log(name)
+            disp_string += name + "<br><br>";
+          }
+          document.getElementById("nameBox").innerHTML = disp_string;
       });
   }
 </script>
@@ -41,7 +46,7 @@
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col">
           <div class="mdl-shadow--2dp mdl-color--grey-100" style="text-align: center; margin: auto; padding: 100px">
-            <h1 class="mdl-display-4 mdl-color-text--accent" id="nameBox" style="margin: auto;">Skål en namn här</h1>
+            <h1 class="mdl-display-4 mdl-color-text--accent" id="nameBox" style="margin: auto; word-break: break-word;">Skål en namn här</h1>
           </div>
         </div>
         <div class="mdl-cell mdl-cell--12-col" style="text-align: center">
