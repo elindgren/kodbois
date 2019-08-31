@@ -12,6 +12,10 @@
       "methods": ["GET"]
     },
     {
+      "src": "/roligaord.json",
+      "dest": "/roligaord.json"
+    },
+    {
       "src": "/test",
       "dest": "/index.js",
       "methods": ["GET"]

@@ -19,12 +19,12 @@
           return response.text();
       }).then(function(data) {
           // `data` is the parsed version of the JSON returned from the above endpoint.
+          console.log(data);
           let tmp = JSON.parse(data);
           let names = (Object.values(tmp));
           // Build inner html
           let disp_string = "";
           for(const name of names) {
-            console.log(name)
             disp_string += name + "<br><br>";
           }
           document.getElementById("nameBox").innerHTML = disp_string;
